@@ -7,11 +7,20 @@ public class App {
     static String password="Pass_123";
 
     public static void main(String[] args) throws Exception {
-        try (Connection conn=DriverManager.getConnection(url, userName, password)){
-            
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
-        
+        try(Connection conn= DriverManager.getConnection(url, userName, password)){
+            PersonaServices personaServices=new PersonaServices();
+
+            //personaServices.obtenerNumeroPersonas(conn);
+            //personaServices.insertarPersona(conn);
+            //personaServices.actualizarPersona(conn);
+            //personaServices.eliminarPersona(conn);
+            //personaServices.insertarPersonaConValores(conn);
+            //personaServices.actualizarPersonaConValores(conn);
+            //personaServices.eliminarPersonaConValores(conn);
+            //personaServices.obtenerPersonasConValores(conn);
+
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }        
     }
 }
