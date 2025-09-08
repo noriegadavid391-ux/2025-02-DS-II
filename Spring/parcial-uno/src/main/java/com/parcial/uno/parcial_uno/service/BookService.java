@@ -3,9 +3,13 @@ package com.parcial.uno.parcial_uno.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+import com.parcial.uno.parcial_uno.dtos.BookDTO;
 import com.parcial.uno.parcial_uno.model.Book;
 
-public class BookService {
+@Service
+public class BookService implements IBookService {
     
     private final List<Book> books = new ArrayList<>();
 
@@ -18,5 +22,10 @@ public class BookService {
         books.add(new Book("1940136a-2", "0060973129","Decision in Normandy", 3, true));
         books.add(new Book("12a13228-0", "0345402871","Airframe", 1, true));
         books.add(new Book("51ed516f-a", "0375759778","Prague: A Novel", 2, true));
+    }
+
+    @Override
+    public List<Book> getAll() {
+        return books;
     }
 }
